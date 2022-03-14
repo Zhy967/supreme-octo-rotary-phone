@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="text">啊实打实大苏打</div>
+    <script>
+        //封装一个函数,传任意参数进行求和运算
+        function num() {
+            let arg = arguments;//伪数组
+            console.log(arg);
+            let temp = 0;
+            for (let i = 0; i < arg.length; i++) {
+                temp += arg[i];
+            }
+            return temp;
+        }
+        console.log(num(2, 3));
+        console.log(num(2, 3, 4));
+        console.log(num(2, 3, 4, 5));
+
+        //封装一个函数,没有实参就返回div文本,有参数,就更改div内容
+        let word = document.querySelector(".text");
+        function html() {
+            let arg = arguments;
+            // console.log(arg);
+            if (arg.length == 0) {
+                return word.textContent;
+            } else if (arg.length == 1) {
+                word.innerHTML = `啊啊啊啊`;
+            }
+        }
+        console.log(html());
+        html('看不惯');
+
+    </script>
+</body>
+
+</html>
